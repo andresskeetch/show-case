@@ -1,0 +1,56 @@
+@import "../../styles/colors.scss";
+
+
+.nav {
+  background-color: $background_primary;
+  height: 60px;
+  position: fixed;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__logo {
+    background: url("../../assetts/images/logo__large_plus.png");
+    background-size: contain;
+    height: 34px;
+    width: 134px;
+    background-repeat: no-repeat;
+    margin-right: 20px;
+  }
+
+  &__container--search {
+
+    width: 70%;
+    display: flex;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+    border-radius: 2px;
+    input {
+      height: 39px;
+      width: 100%;
+      border: 1px solid $background_secondary;
+      outline: none;
+      padding-left: 15px;
+      font-size: 1em;
+      color: #333;
+
+      &::placeholder {
+        color: $placeholder_primary
+      }
+    }
+
+    button {
+      width: 50px;
+      cursor: pointer;
+      border: 1px solid $border_primary;
+      background: $background_secondary;
+      outline: none;
+      border-left: 1px solid $border_secondary;
+      
+      svg {
+        width: 2em;
+        color: $icons_color_primary;
+      }
+    }
+  }
+}

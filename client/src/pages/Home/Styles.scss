@@ -1,0 +1,13 @@
+
+@import "../../styles/colors.scss";
+
+.container {
+
+  padding: 30px;
+  background-color: $background_third;
+
+  &__panel {
+    background-color: $background_secondary;
+    width: 100%;
+  }
+}

@@ -1,14 +1,14 @@
 const axios = require('axios');
 
 const API_ITEM = App.api.items;
-const API_ALL_ITEMS = App.api.items;
+const API_ALL_ITEMS = App.api.allItems;
 
 const getItems = async (query) => {
   try {
     const { data } = await axios.get(`${API_ALL_ITEMS}${query}`);
 
     return data;
-  } catch {
+  } catch (e) {
     throw new Error();
   }
 };

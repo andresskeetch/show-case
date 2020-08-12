@@ -5,5 +5,6 @@ module.exports = {
   port: process.env.PORT,
   api: {
     items: process.env.API_PATH_ITEMS,
+    allItems: process.env.API_PATH_ALL_ITEMS,
   },
 };

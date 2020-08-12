@@ -8,7 +8,7 @@ module.exports = (response) => {
       price: {
         currency: item.currency_id,
         amount: item.price,
-        decimals: 2,
+        decimals: item.price - Math.floor(item.price),
       },
       picture: item.thumbnail,
       condition: item.condition,

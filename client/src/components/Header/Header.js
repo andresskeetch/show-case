@@ -1,9 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import ItemsActions from '../../redux/reducers/items.reducer';
 import './Styles.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
+  const dispatch = useDispatch();
+
+  const [search, setSearch] = useState();
+
+  const handleSearch = () => {
+    dispatch(ItemsActions.getItems(search));
+  };
+
+  const handleEnter = (e) => {
+    if (e.which === 13 || e.keyCode === 13) {
+      handleSearch();
+    }
+  };
+
   return (
     <nav className='nav'>
       <div className='nav__logo'></div>
@@ -12,8 +28,10 @@ const Header = () => {
           type='text'
           autoComplete='off'
           placeholder='Nunca dejes de buscar'
+          onChange={(e) => setSearch(e.target.value)}
+          onKeyPress={handleEnter}
         />
-        <button>
+        <button onClick={handleSearch}>
           <FontAwesomeIcon icon={faSearch} />
         </button>
       </div>

@@ -4,7 +4,6 @@ import { formatMoney, getSymbol } from '../../helpers/money';
 
 const CardItem = ({ item }) => {
   const symbol = getSymbol();
-  console.log(item);
 
   const Redirect = ({ children }) => (
     <a href={`/items/${item.id}`} title={item.title}>

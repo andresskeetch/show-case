@@ -11,21 +11,21 @@
   align-items: center;
 
   &__logo {
-    background: url("../../assetts/images/logo__large_plus.png");
+    background: url("../../assets/images/Logo_ML@2x.png");
     background-size: contain;
-    height: 34px;
-    width: 134px;
+    height: 40px;
+    width: 60px;
     background-repeat: no-repeat;
     margin-right: 20px;
   }
 
   &__container--search {
-
+    background-color: $background_secondary;
     width: 70%;
     display: flex;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
     border-radius: 2px;
-    input {
+    input[type="text"] {
       height: 39px;
       width: 100%;
       border: 1px solid $background_secondary;
@@ -39,18 +39,17 @@
       }
     }
 
-    button {
+    input[type="button"] {
       width: 50px;
+      height: 43px;
       cursor: pointer;
       border: 1px solid $border_primary;
       background: $background_secondary;
       outline: none;
       border-left: 1px solid $border_secondary;
-      
-      svg {
-        width: 2em;
-        color: $icons_color_primary;
-      }
+      background: url("../../assets/images/ic_Search.png");
+      background-repeat: no-repeat;
+      background-position: center;
     }
   }
 }

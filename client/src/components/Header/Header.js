@@ -31,9 +31,7 @@ const Header = () => {
           onChange={(e) => setSearch(e.target.value)}
           onKeyPress={handleEnter}
         />
-        <button onClick={handleSearch}>
-          <FontAwesomeIcon icon={faSearch} />
-        </button>
+        <input type='button' className='search__icon' onClick={handleSearch} />
       </div>
     </nav>
   );

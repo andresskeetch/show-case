@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import { ConnectedRouter } from 'connected-react-router';
 import configureStore, { history } from '../../lib/loaders/redux';
-import Home from '../Home/Home';
+import Home from '../Home/home';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import Header from '../../components/Header/Header';
 import './Styles.scss';

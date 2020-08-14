@@ -10,7 +10,6 @@ const ItemDetail = ({ match }) => {
 
   const { id } = match.params;
   const { itemSelected } = useSelector(({ search }) => search);
-  console.log(itemSelected);
   useEffect(() => {
     dispatch(ItemsActions.getItemById(id));
   }, []);

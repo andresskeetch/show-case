@@ -11,7 +11,6 @@ const CardItem = ({ item }) => {
     </a>
   );
 
-  console.log(item);
   return (
     <div className='card'>
       <Redirect>

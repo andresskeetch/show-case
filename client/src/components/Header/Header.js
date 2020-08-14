@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { push } from 'connected-react-router';
 import ItemsActions from '../../redux/reducers/items.reducer';
 import './Styles.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -22,7 +21,7 @@ const Header = () => {
 
   return (
     <nav className='nav'>
-      <div className='nav__logo'></div>
+      <div className='nav__logo' onClick={() => dispatch(push('/'))}></div>
       <div className='nav__container--search'>
         <input
           type='text'

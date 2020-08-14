@@ -1,3 +1,8 @@
+const getDecimal = (price) => {
+  if (price.toString().includes('.')) return price.toString().split('.')[1];
+  return '00';
+};
+
 module.exports = (item, description) => {
   return {
     item: {
@@ -5,8 +10,8 @@ module.exports = (item, description) => {
       title: item.title,
       price: {
         currency: item.currency_id,
-        amount: item.price,
-        decimals: item.price - Math.floor(item.price),
+        amount: item.price.toFixed(0),
+        decimals: getDecimal(item.price),
       },
       picture: item.thumbnail,
       condition: item.condition,

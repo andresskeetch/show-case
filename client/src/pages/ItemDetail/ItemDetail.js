@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import ItemsActions from '../../redux/reducers/items.reducer';
 import './Styles.scss';
 import { formatMoney, getSymbol } from '../../helpers/money';
+import Condition from '../../helpers/condition';
 
 const ItemDetail = ({ match }) => {
   const dispatch = useDispatch();
@@ -13,6 +14,11 @@ const ItemDetail = ({ match }) => {
   useEffect(() => {
     dispatch(ItemsActions.getItemById(id));
   }, []);
+
+  const itemsSolds = () => {
+    // may validate to retun only solds.
+    return ` - ${itemSelected.sold_quantity} vendidos`;
+  };
 
   const symbol = getSymbol();
 
@@ -25,7 +31,8 @@ const ItemDetail = ({ match }) => {
           </div>
           <div className='content__description'>
             <h4 className='content__description--condition'>
-              {itemSelected.condition}
+              {Condition[itemSelected.condition]}
+              {itemsSolds()}
             </h4>
             <h2 className='content__description--title'>
               {itemSelected.title}

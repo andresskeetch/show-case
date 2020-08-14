@@ -11,12 +11,16 @@ const CardItem = ({ item }) => {
     </a>
   );
 
+  console.log(item);
   return (
     <div className='card'>
       <Redirect>
         <img className='card__imagen' src={item.picture} alt={item.title} />
       </Redirect>
       <div className='card__description'>
+        {item.free_shipping && (
+          <div className='card__description--shipping'></div>
+        )}
         <div className='card__description--price'>
           {`${symbol} ${formatMoney(item.price.amount)}`}
         </div>
